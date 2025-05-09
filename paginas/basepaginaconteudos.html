@@ -1,0 +1,414 @@
+<!--
+    
+A APS será constituída pelos seguintes tópicos:
+O grupo de alunos deverá criar um site e um aplicativo, direcionado a preservação do meio ambiente da região Centro-Oeste (preservação da fauna, flora, rios, lagos, cavernas, ecoturismo etc). 
+A proposta deve ser submetida à análise e aprovação do coordenador auxiliar ou professor(es) da(s) disciplinas em questão.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes" >
+    <title>Site base da APS</title>
+    <link   
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        /> <!--faz o boostrap funcionar-->
+    <style>
+        
+        body { /*estiliza o body*/
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #faf3ea;
+            min-height: 100vh;
+        }
+
+        main {
+            position: relative;
+        }
+
+        .barradeindex { /*barra de itens de cima*/
+            position: absolute;
+            width: 100%;
+            height: 7vh;
+            background: linear-gradient(90deg,#164768 25%,#317aaa); 
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+            border-bottom: #123953 solid 10px;
+            flex-wrap: wrap;
+            top: 0;
+            z-index: 2;
+        }
+
+        .itemindex {
+            list-style: none;
+            font-weight: bold;
+        }
+
+        .itemindexicon {
+            transition: 0.2s ease-in;
+        }
+
+        .itemindexicon:hover {
+                transform: scale(1.2);
+                transition: 0.2s ease-in;
+        }
+
+
+        .itemindex:hover {
+            text-decoration: underline white;
+        }
+
+        .linkitemindex {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .rodape { /*como o nome diz, é a barra de baixo*/
+            position: relative;
+            bottom: 0;
+            top: 100%;
+            width: 100%;
+            height: 10vh;
+            background: linear-gradient(270deg,#57cc99 35%, #c7f9cc); 
+            border-top: #389c71 solid 10px;
+            
+        }
+
+        /*.bgimg {
+            width: 100vw;
+            height: 90vh;
+        }*/
+
+        .containerbgimg {
+            text-align: center;
+            opacity: 0.25;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .containerindexpag {
+            position: fixed;
+            top: 30%;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .conteudoindexpag {  /*div com as partes*/
+            background: linear-gradient(180deg,#317aaa 35%, #57cc99 );
+            width: 165px;
+            height: 300px;
+            position: relative;
+            color: white;
+            z-index: 1;
+            font-size: 50px;
+            transition: text-shadow 0.5s ease-out;
+            border: #123953 3px solid;
+            transition: width 0.5s ease-in;
+            border-right: none;
+            display:flex;
+            align-items: center;
+        }
+        .conteudoindexpag.fechada {
+            transition: width 0.5s ease-in;
+            width: 0;
+            border: 0;    
+                }
+                
+        .textoindexpag {
+            font-size: 20px;
+            transition: 0.2s ease-out;
+        }
+        
+        .linkindexpagconteudo {
+            transition: 0.2s ease-out;
+
+        }
+
+        
+        .linkindexpagconteudo:hover { /*animação que acontecerá quando o mouse estiver em cima do "indexpagconteudo"*/
+            text-shadow: white 1px 1px 10px;
+            transition: 0.2s ease-out;
+            letter-spacing: 2px;
+        }
+        
+        .indexpagbutton { /*a barra lateral*/
+            background: linear-gradient(180deg,#317aaa 35%, #57cc99 );
+            width: 50px;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            color: white;
+            z-index: 1;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: text-shadow 0.5s ease-out;
+            border: #123953 3px solid;
+        }
+        
+        .indexpagbutton:hover { /*animação que acontecerá quando o mouse estiver em cima do "indexpagbutton"*/
+            animation: piscaseta 1.2s infinite ease-in-out;
+        }
+
+        @keyframes piscaseta {
+            0% {
+                text-shadow: white 0px 0px 0px;
+            }
+            50% {
+                text-shadow: white 1px 1px 10px;
+            }
+            100% {
+                text-shadow: white 0px 0px 0px;
+            }
+        }
+        
+        @keyframes indexseta {
+                    0% {
+                        font-size: 50px;
+                    }
+                    50% {
+                        font-size: 70px;
+                    }
+                    100% {
+                        font-size: 50px;
+                    }
+                }
+
+        .indexpagbutton.animationclicked {  /*animação que acontecerá quando clicar em cima do "indexpagbutton"*/
+            animation: indexseta ease-out 0.2s;
+        }
+
+        .conteudoindexpag
+    
+        .caixatexto { /*arruma como o texto vai aparecer*/
+            display: flex;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+            
+        .texto { /*arruma como o texto deve ficar*/
+            top: 10vh;
+            left: 25vw;
+            position: relative;
+            width: 700px;
+            background-color: white;
+            word-wrap: break-word;
+            padding: 50px;
+            margin-bottom: 200px;
+        } 
+        
+
+        .textoindexpag.textoescondido {
+            display: none;
+        }
+
+        
+
+        .cardimagem {
+            
+            left: 79vw;
+            top: 25vh;
+            position: absolute;
+            
+        }
+    </style>
+</head>
+<body>
+    <header class="barradeindex shadow">
+        <li class="itemindex"><a href="/betaindexaps.html" class="itemindexicon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="30px" class="itemindexicon">
+            <path fill="white" d="m14,11.419v-4.419H3v4.419c0,1.853-.349,3.665-1.037,5.386l-1.963,4.906v2.289h17v-2.289l-1.963-4.907c-.688-1.72-1.037-3.532-1.037-5.385Zm-8-1.419h5v1.419c0,
+            .195.021.387.027.581h-5.055c.006-.194.027-.386.027-.581v-1.419Zm-2.484,11l1.232-3.081c.38-.951.664-1.928.872-2.919h5.761c.208.991.491,1.967.872,2.918l1.232,3.082H3.516Zm18.521-4.195l1.963,
+            4.906v2.289h-5v-3h1.484l-1.232-3.082c-.38-.951-.664-1.927-.872-2.918h-2.38v-3h2.027c-.006-.194-.027-.386-.027-.581v-1.419h-2v-3h5v4.419c0,1.852.349,3.664,1.037,
+            5.386Zm1.963-12.305v.5h-3v-.5c0-.827-.673-1.5-1.5-1.5-.408,0-.721.178-.911.327l-.992.779-.938-.845c-.133-.119-.354-.262-.659-.262-.262,0-.51.103-.698.288l-1.052,
+            1.033-1.052-1.033c-.377-.371-1.019-.371-1.397,0l-1.051,1.033-1.051-1.033c-.189-.186-.437-.288-.699-.288-.551,0-1,.448-1,1v1h-3v-1C5,1.794,6.794,0,9,0c.615,0,1.211.14,1.75.402,1.078-.525,
+            2.422-.525,3.5,0,1.057-.515,2.37-.532,3.448-.018.565-.254,1.175-.385,1.802-.385,2.481,0,4.5,2.019,4.5,4.5Z"/>
+            </svg>
+        </a></li>
+        <li class="itemindex"><a href="/betaindexaps.html" class="linkitemindex" title="Clique para voltar a página de ÍNICIO"><u>ÍNICIO</u></a></li>
+        <li class="itemindex"><a href="www.google.com" class="linkitemindex" title="Teste">TESTE</a></li>
+        <li class="itemindex"><a href="www.google.com" class="linkitemindex" title="Teste">TESTE</a></li>
+        <li class="itemindex"><a href="paginas/pagapresentarcalculadora.html" class="linkitemindex" title="Página de Download da Calculadora">DOWNLOAD CALCULADORA</a></li>
+        <li class="itemindex"><a href="paginas/pagapresentarcalculadora.html" class="">
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="30px" class="itemindexicon">
+                <path fill="white" d="M22.732,9.013c-.767-.699-1.768-1.052-2.797-1.008-1.036,.048-1.992,.498-2.69,1.265l-2.438,2.679c-.646-.589-1.506-.949-2.448-.949H3.5c-1.93,0-3.5,1.57-3.5,3.5v6c0,1.93,1.57,3.5,3.5,3.5H14.681l8.334-9.532c1.41-1.58,
+                1.283-4.027-.282-5.455Zm-1.966,3.469l-7.447,8.518H3.5c-.275,0-.5-.225-.5-.5v-6c0-.275,.225-.5,.5-.5H12.358c.354,0,.642,.288,.642,.643,0,.317-.236,.591-.551,.635l-5.161,.737,.424,2.971,5.161-.737c1.619-.231,2.876-1.53,
+                3.094-3.116l3.497-3.842c.159-.175,.376-.277,.612-.288,.235-.011,.463,.071,.636,.229,.356,.325,.385,.881,.055,1.252ZM0,1.226S3.666-1.304,7.672,.905c1.533,.845,2.18,2.638,1.625,4.22,.171,.454,.305,.923,.403,1.388,.378-.402,
+                .817-.771,1.317-1.087-.092-1.07,.429-2.144,1.427-2.702,3.161-1.768,6.557,.276,6.557,.276-.742,1.863-2.052,3.659-3.808,4.641-1.099,.615-2.424,.403-3.296-.416-1.306,.907-1.897,2.317-1.897,
+                2.775h-2c0-1.582-.162-2.731-.399-3.594-.306-.831-1.184-2.095-1.2-2.107l.007-.009c-1.669-2.01-3.907-2.291-3.907-2.291,2.179,2.49,3,3.5,3.471,5.484-.605,.008-1.218-.121-1.784-.433C1.962,5.824,1,3,0,1.226Z"/>
+                </svg>
+        </a></li>
+    </header>
+    <main>
+
+<!--    Index da Página de Conteúdo    -->
+
+    <div class="containerindexpag shadow-lg">
+        <div class="conteudoindexpag fechada shadow">
+            <div class="textoindexpag textoescondido">
+                <ul>
+                <li><a href="#Parte1" class="text-light p-2 linkindexpagconteudo">Parte1</a></li>
+                <li><a href="#Parte2" class="text-light p-2 linkindexpagconteudo">Parte2</a></li>
+                <li><a href="#Parte2" class="text-light p-2 linkindexpagconteudo">Parte3</a></li>
+                <li><a href="#Parte2" class="text-light p-2 linkindexpagconteudo">Parte4</a></li>
+                <li><a href="#Parte2" class="text-light p-2 linkindexpagconteudo">Parte5</a></li>
+                <li><a href="#Parte2" class="text-light p-2 linkindexpagconteudo">Parte6</a></li>
+            </ul>
+            </div>
+        </div>
+    <div class="indexpagbutton shadow-lg" id="indexpagbutton"><div id="txtseta" class="setafechada">></div></div></div>
+
+
+    <!--<div class="containerbgimg"><img src="/imagens/fumaca.gif" class="bgimg"></div>-->
+
+    <!-- Card da Página de Conteúdo -->
+
+    <div class="cardimagem shadow" style="width:18rem; ">
+        <img src="/imagens/gases.png" class="card-img-top" alt="co2">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i style="font-size: 13px;">(Resumo)</i><br>
+            Emissão de Gases</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Qual é o principal responsável pela emissão de gases?</h6>
+          <p class="card-text">Uma das maiores emissões de gás deste tipo são na queima de combustíveis fósseis, como carvão e petróleo. 
+              <br>2. Gás metano (CH4): é o segundo gás que mais contribui para o aumento da temperatura, com poder de mais de 20 vezes que o dióxido de carbono. 
+              Provém de atividades ligadas a aterros sanitários, lixões e pecuária.</p>
+        </div>
+      </div>
+
+
+    <!-- Parte de Texto da Página de Conteúdo -->
+
+    <div class="caixatexto"> <!--alinha a div de baixo-->
+        <div class="texto shadow-lg"> <!--texto da pág-->
+            
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            "A estiagem natural do inverno na região Centro-Oeste pode vir acompanhada de focos naturais de queimadas, mas em trechos isolados, com a atuação dos ventos e tempo seco. 
+            Os focos também podem aparecer perto do período chuvoso, com a ação de raios e outros fenômenos naturais.
+            Entretanto, o que tem sido visto ultimamente é um aumento considerável desses focos em épocas muito secas e em grandes áreas, o que leva a crer que esses focos sejam 
+            causados pela ação humana."
+            
+        </div>
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5 pt-5 texto shadow-lg mb-5" style="width: 70vw;">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="../imagens/caracco2.jpg" class="d-block mx-lg-auto img-fluid" alt="caracgás" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 text-body-emphasis lh-1 mb-3 text-decoration-underline">Características</h1>
+            <p class="lead">O gás carbônico é incolor, inodoro e mais pesado que o ar, sendo de difícil detecção no ambiente, pois não apresenta cheiro ou sabor.
+                Em alta concentração na atmosfera, ele constitui-se como um dos principais gases formadores do efeito estufa.
+                Em decorrência desse processo, o dióxido de carbono pode causar a poluição do ar, aumento das temperaturas e chuva ácida.
+                Ainda é responsável pela fotossíntese e combustão. Sem ele, as plantas, o fitoplâncton e as algas não poderiam fazer o processo de fotossíntese.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container px-4 pt-5 my-5 text-center border-bottom texto shadow-lg" style="width: 90vw; padding: 0;">
+        <h1 class="display-4 text-body-emphasis text-decoration-underline">Fontes Emissoras</h1>
+        <div class="col-lg-9 mx-auto">
+          <p class="lead mb-4">Emissão de dióxido de carbono
+            Existem diversas fontes de emissão de dióxido de carbono
+            A combustão da matéria orgânica é a principal fonte de produção do CO². Ela decorre da queima de produtos como óleo, madeira e combustíveis fósseis.
+            As atividades humanas, especialmente industriais, são fontes importantes de emissão de dióxido de carbono.
+            A fermentação, a decomposição de matéria orgânica, e os processos respiratórios dos organismos vivos também são fontes de produção do CO².
+            As erupções vulcânicas, desmatamentos e queimadas também emitem dióxido de carbono.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <img src="../imagens/gases.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="fabricafumaça" width="400" height="200" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <img src="../imagens/carrofumaça.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="carrofumaça" width="400" height="200" loading="lazy">
+          </div>
+        </div>
+      </div>
+    
+</main>
+
+
+    <!-- Rodapé da Página de Conteúdo -->
+    
+    <footer class="rodape">
+        <div class="fontes">
+            <span class="shadow" style="font-size:20px">Fontes:</span>
+        </div>
+    </footer>
+    
+    
+    <script>
+        const element = document.querySelector('.indexpagbutton');
+        const conteudo = document.querySelector('.conteudoindexpag')
+        
+        const txtconteudo = document.querySelector('.textoindexpag')
+
+    element.addEventListener('click', function() {
+        
+        conteudo.classList.toggle("fechada")
+        setTimeout((function() {
+            txtconteudo.classList.toggle("textoescondido")
+        }), 300)  
+    })
+
+element.addEventListener('click', function() {
+  // Adiciona a classe 'clicked' ao elemento quando ele é clicado
+  this.classList.add('animationclicked')
+  // Remove a classe 'clicked' após 300ms (para permitir a animação)
+  setTimeout(() => {
+    this.classList.remove('animationclicked');
+  }, 200);
+});
+    </script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+</body> 
+</html> 

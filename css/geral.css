@@ -1,0 +1,636 @@
+/* CSS Página Index*/
+
+body {
+    margin: 0;
+}
+
+main.containerpagindex {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg,#123953 25%,#57cc99);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+.barradeindex {
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(90deg,#164768 25%,rgb(49, 122, 170)); 
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    border-bottom: #123953 solid 10px;
+    flex-wrap: wrap;
+}
+
+.itemindex {
+    list-style: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.itemindexicon {
+    transition: 0.2s ease-in-out;
+}
+
+.itemindexicon:hover {
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out;
+}
+
+.itemindex:hover {
+    text-decoration: underline white;
+}
+
+.linkitemindex {
+    text-decoration: none;
+    color: white;
+}
+
+.bgimg {
+    width: 100vw;
+    height: 100vh;
+}
+
+.containerbgimg {
+    text-align: center;
+    opacity: 0.25;
+    position: absolute;
+    z-index: 0;
+}
+
+.boxtitulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.divtitulo {
+
+    background: linear-gradient(200deg,#317aaa 35%, #57cc99 );
+    width: 700px;
+    font-size: 35px;
+    border: #123953 5px solid;
+    border-radius: 50px;
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    
+}
+
+.txtcentrooeste {
+    font-size: 50px;
+    text-decoration: underline;
+    text-shadow:  1px 2px black,
+                0 0 1em rgb(0, 119, 255),
+                0 0 0.2em rgb(0, 119, 255);
+}
+
+#box {  /*estilo caixas*/   
+    display: flex;
+    border: 2px solid #123953; 
+    background-color: #24a8ff;
+    z-index: 1;
+    transition: 0.3s ease-out;
+    align-self: center;
+    border-radius: 30px;
+    height: 275px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: ease-in-out 0.3s;
+}   
+
+.conteudos {
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 30vh;
+    flex-wrap: wrap;
+} 
+
+    @media (max-width: 1200px){
+
+    .boxtitulo {
+        transform: scale(0.6);
+    }
+
+    .divtitulo {
+        top: 5vh;
+        line-height: 45px;
+    }
+
+
+    .conteudos {
+        margin-top: 10vh;
+        transform: scale(0.75);
+    }
+    #box {
+        
+        height: 180px;
+        margin: 5px; 
+    }
+
+    .itemindex {
+        font-size: 14px;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+}
+
+@media (max-height: 700px){
+
+    html {
+        overflow-x: hidden;
+    }
+
+    .boxtitulo {
+        transform: scale(0.8);
+        margin-top: 10vh;
+    }
+
+    .rodape {
+        position: fixed;
+    }
+}
+
+@keyframes piscacaixa {
+    0% {
+        text-shadow:
+                1px 1px 2px black,
+                0 0 1em rgb(0, 119, 255),
+                0 0 0.2em rgb(0, 119, 255);
+        
+    }
+    50%{
+        text-shadow:
+                1px 1px 2px black,
+                1px 1px 3em rgb(0, 26, 255),
+                1px 1px 0.8em rgb(0, 26, 255);
+    }
+    100%{
+        text-shadow:
+                1px 1px 2px black,
+                0 0 1em rgb(0, 119, 255),
+                0 0 0.2em rgb(0, 119, 255);
+    } 
+}
+
+#box:hover {
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
+    animation: piscacaixa ease-in-out 2s infinite;
+}
+
+#linksconteudos {
+    display: flex;
+    font-family: Verdana;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: none;
+    text-shadow:
+                1px 1px 2px black,
+                0 0 1em rgb(0, 119, 255),
+                0 0 0.2em rgb(0, 119, 255);
+    z-index: 2;
+}
+
+.boxemissao {
+    background-image: url(../imagens/co2.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+
+.boxefeitoestufa{
+    background-image: url(../imagens/efeito_estufa.jpg);
+    background-size: 123%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.boxqueimada {
+    background-image: url(../imagens/fogo.jpg);
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box.boxqueimada {
+    background-color: #c7f9cc;
+}
+
+.boxcalculadora{
+    background-image: url(../imagens/tree.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box.boxcalculadora {
+    background-color: #389c71;
+}
+
+.rodapepagindex {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 5vh;
+    background: linear-gradient(270deg,#57cc99 35%, #c7f9cc ); 
+    border-top: #389c71 solid 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Página Gases CO2 */
+
+main {
+    position: relative;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #faf3ea;
+    min-height: 100vh;
+}
+
+.barradeindex { /*barra de itens de cima*/
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(90deg,#164768 25%,#317aaa); 
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    border-bottom: #123953 solid 10px;
+    flex-wrap: wrap;
+    top: 0;
+    z-index: 2;
+}
+
+.itemindex {
+    list-style: none;
+    font-weight: bold;
+}
+
+.itemindexicon {
+    transition: 0.2s ease-in;
+}
+
+.itemindexicon:hover {
+        transform: scale(1.2);
+        transition: 0.2s ease-in;
+}
+
+.itemindex:hover {
+    text-decoration: underline white;
+}
+
+.linkitemindex {
+    text-decoration: none;
+    color: white;
+}
+
+.rodape { /*como o nome diz, é a barra de baixo*/
+    position: relative;
+    bottom: 0;
+    margin-top: 200px;
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(270deg,#57cc99 35%, #c7f9cc); 
+    border-top: #389c71 solid 10px;
+}
+
+.containerbgimg {
+    text-align: center;
+    opacity: 0.25;
+    position: absolute;
+    z-index: 0;
+}
+
+.boxindexpag {
+    position: fixed;
+    z-index: 2;
+    top: 30%;
+}
+
+.containerindexpag {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    
+}
+
+.conteudoindexpag {  /*div com as partes*/
+    background: linear-gradient(180deg,#317aaa 35%, #57cc99 );
+    width: 245px;
+    height: 300px;
+    position: relative;
+    color: white;
+    z-index: 1;
+    font-size: 50px;
+    transition: text-shadow 0.5s ease-out;
+    border: #123953 3px solid;
+    transition: width 0.5s ease-in;
+    border-right: none;
+    display:flex;
+    align-items: center;
+}
+.conteudoindexpag.fechada {
+    transition: width 0.5s ease-in;
+    width: 0;
+    border: 0;    
+        }
+        
+.textoindexpag {
+    font-size: 20px;
+    transition: 0.2s ease-out;
+}
+
+.linkindexpagconteudo {
+    transition: 0.2s ease-out;
+
+}
+
+.linkindexpagconteudo:hover { /*animação que acontecerá quando o mouse estiver em cima do "indexpagconteudo"*/
+    text-shadow: white 1px 1px 10px;
+    transition: 0.2s ease-out;
+    letter-spacing: 2px;
+}
+
+.indexpagbutton { /*a barra lateral*/
+    background: linear-gradient(180deg,#317aaa 35%, #57cc99 );
+    width: 50px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: text-shadow 0.5s ease-out;
+    border: #123953 3px solid;
+    z-index: 2;
+}
+
+.indexpagbutton:hover { /*animação que acontecerá quando o mouse estiver em cima do "indexpagbutton"*/
+    animation: piscaseta 1.2s infinite ease-in-out;
+}
+
+@keyframes piscaseta {
+    0% {
+        text-shadow: white 0px 0px 0px;
+    }
+    50% {
+        text-shadow: white 1px 1px 10px;
+    }
+    100% {
+        text-shadow: white 0px 0px 0px;
+    }
+}
+
+@keyframes indexseta {
+            0% {
+                font-size: 50px;
+            }
+            50% {
+                font-size: 70px;
+            }
+            100% {
+                font-size: 50px;
+            }
+        }
+.indexpagbutton.animationclicked {  /*animação que acontecerá quando clicar em cima do "indexpagbutton"*/
+    animation: indexseta ease-out 0.2s;
+}
+
+    @media (max-width: 700px) {
+    .textocontainer {
+        transform: scale(0.75);
+        flex-wrap: wrap;
+    }
+
+    .boxindexpag {
+        transform: scale(0.75);
+    }
+
+}
+
+.textocontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixatexto { /*arruma como o texto vai aparecer*/
+    display: flex;
+    flex-wrap: wrap;
+}
+    
+.texto { /*arruma como o texto deve ficar*/
+    top: 10vh;
+    position: relative;
+    width: 700px;
+    background-color: white;
+    word-wrap: break-word;
+    padding: 50px;
+    margin-top: 10px;
+} 
+
+.textoindexpag.textoescondido {
+    display: none;
+}
+
+.cardimagem {
+    left: 77vw;
+    top: 25vh;
+    position: absolute;
+}
+h3 {
+    text-decoration:underline
+}
+
+img {
+    margin:auto;
+    display: block;
+}
+
+
+
+
+
+
+/* CSS Página Apresentação GreenLeaf*/
+
+html {
+    overflow-x: hidden;
+}
+
+main.pagcalc {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(19, 19, 19);
+    min-height: 100vh;
+    background-image: url(../imagens/folhas.jpg);
+    display: flex;
+    justify-content: center;
+    align-self: baseline;   
+}
+
+.box-conteudo {
+    background-color: rgb(19, 19, 19);
+}
+
+.barradeindex.pagcalc { /*barra de itens de cima*/
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(90deg,#0c0c0c 45%,#00a11b ); 
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    border-bottom: #000000 solid 10px;
+    flex-wrap: wrap;
+    top: 0;
+    z-index: 2;
+}
+
+.itemindex {
+    list-style: none;
+    font-weight: bold;
+}
+
+.itemindexicon {
+    transition: 0.2s ease-in;
+}
+
+.itemindexicon:hover {
+        transform: scale(1.2);
+        transition: 0.2s ease-in;
+}
+
+.itemindex:hover {
+    text-decoration: underline white;
+}
+
+.linkitemindex {
+    text-decoration: none;
+    color: white;
+}
+
+.rodape { /*como o nome diz, é a barra de baixo*/
+    position: relative;
+    bottom: 0;
+    top: 100%;
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(270deg,#57cc99 35%, #c7f9cc); 
+    border-top: #389c71 solid 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Página Download GreenLeaf */
+
+.containerdownload {
+  margin-top: 5vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(19, 19, 19);
+  min-height: 100vh;
+}
+
+.barradeindex.pagdownload { /*barra de itens de cima*/
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(90deg,#0c0c0c 45%,#198754 ); 
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    border-bottom: #000000 solid 10px;
+    flex-wrap: wrap;
+    top: 0;
+    z-index: 2;
+}
+
+.itemindex {
+    list-style: none;
+    font-weight: bold;
+}
+
+.itemindexicon {
+    transition: 0.2s ease-in;
+}
+
+.itemindexicon:hover {
+        transform: scale(1.2);
+        transition: 0.2s ease-in;
+}
+
+
+.itemindex:hover {
+    text-decoration: underline white;
+}
+
+.linkitemindex {
+    text-decoration: none;
+    color: white;
+}
+
+.rodape { /*como o nome diz, é a barra de baixo*/
+    position: relative;
+    bottom: 0;
+    top: 100%;
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(270deg,#57cc99 35%, #c7f9cc); 
+    border-top: #389c71 solid 10px;
+    
+}
+
+.containerbgimg {
+    text-align: center;
+    opacity: 0.25;
+    position: absolute;
+    z-index: 0;
+}
+
+.containerqrcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#qrcode {
+  width: 500px;
+  height: 475px;
+  text-align: center;
+}
